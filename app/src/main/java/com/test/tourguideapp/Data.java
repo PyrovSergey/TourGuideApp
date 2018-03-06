@@ -27,7 +27,6 @@ public class Data {
         return places;
     }
 
-
     static ArrayList<Place> getVisitList(Context context) {
         ArrayList<Place> places = new ArrayList<>();
         places.add(new Place(context.getString(R.string.grand_peterhof_palace), R.drawable.grand_peterhof_palace));

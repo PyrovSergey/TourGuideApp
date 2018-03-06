@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-
 public class PageFragment extends Fragment {
 
     public static final String ARG_PAGE = "ARG_PAGE";
@@ -60,6 +59,4 @@ public class PageFragment extends Fragment {
         }
         return null;
     }
-
-
 }
