@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 
 public class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
-    final int PAGE_COUNT = 4;
+    private final int PAGE_COUNT = 4;
     private Context context;
 
     public SampleFragmentPagerAdapter(FragmentManager fm, Context context) {
