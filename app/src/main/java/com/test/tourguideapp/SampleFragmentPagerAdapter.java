@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 public class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
     final int PAGE_COUNT = 4;
-    private String tabTitles[] = new String[] { "Tab1", "Tab2", "Tab3", "Tab4" };
+    private String tabTitles[] = new String[]{"Visit", "Eat", "Fun", "Hotel"};
     private Context context;
 
     public SampleFragmentPagerAdapter(FragmentManager fm, Context context) {
@@ -16,16 +16,18 @@ public class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
         this.context = context;
     }
 
-    @Override public int getCount() {
+    @Override
+    public int getCount() {
         return PAGE_COUNT;
     }
 
-    @Override public Fragment getItem(int position) {
+    @Override
+    public Fragment getItem(int position) {
         return PageFragment.newInstance(position + 1);
     }
 
-    @Override public CharSequence getPageTitle(int position) {
-        // генерируем заголовок в зависимости от позиции
+    @Override
+    public CharSequence getPageTitle(int position) {
         return tabTitles[position];
     }
 }

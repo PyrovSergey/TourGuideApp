@@ -9,7 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+
+import java.util.ArrayList;
 
 
 public class PageFragment extends Fragment {
@@ -39,9 +40,26 @@ public class PageFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView) inflater.inflate(R.layout.places_list, container, false);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
-        recyclerView.setAdapter(new PlaceListItemRecyclerAdapter(Data.getMotoList(getContext())));
+        recyclerView.setAdapter(new PlaceListItemRecyclerAdapter(getItemPlaceList(mPage), getContext()));
 
         return recyclerView;
     }
+
+    private ArrayList<Place> getItemPlaceList(int mPage) {
+        if (mPage == 1) {
+            return Data.getVisitList(getContext());
+        }
+        if (mPage == 2) {
+            return Data.getEatList(getContext());
+        }
+        if (mPage == 3) {
+            return Data.getClubList(getContext());
+        }
+        if (mPage == 4) {
+            return Data.getHotelList(getContext());
+        }
+        return null;
+    }
+
 
 }

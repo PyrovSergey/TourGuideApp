@@ -3,4 +3,31 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="scandal_bar">SCANDAL BAR</string>
+    <string name="bar_nebar">BAR Nebar</string>
+    <string name="arena_concept_club">"Arena Concept Club"</string>
+    <string name="club_lux">Club L.U.X.</string>
+    <string name="club_mod">Club MOD</string>
+    <string name="salute_bistro_and_bar"><![CDATA[Salute Bistro & Bar]]></string>
+    <string name="spices_and_joy">Spices and Joy</string>
+    <string name="terrassa">Terrassa</string>
+    <string name="meat_line">Meat Line</string>
+    <string name="tonyc_bar">ToNYc Bar</string>
+    <string name="grand_peterhof_palace">Grand Peterhof Palace</string>
+    <string name="the_aurora_ship">The Aurora Ship</string>
+    <string name="the_peterhof">The Peterhof</string>
+    <string name="the_singer_house">The Singer house</string>
+    <string name="hermitage">Hermitage</string>
+    <string name="inbox_capsule_hotel">InBox Capsule Hotel</string>
+    <string name="funky_sport_capsule_hostel">Funky Sport Capsule Hostel</string>
+    <string name="your_space_capsule_hostel">Your Space Capsule Hostel</string>
+    <string name="railway_capsules">Railway capsules</string>
+    <string name="hostel_capsular_world">Hostel Capsular World</string>
+
+    <string-array name="tab_array">
+        <item>Visit</item>
+        <item>Eat</item>
+        <item>Fun</item>
+        <item>Hotel</item>
+    </string-array>
 </resources>

@@ -14,12 +14,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        // Получаем ViewPager и устанавливаем в него адаптер
         ViewPager viewPager = findViewById(R.id.viewpager);
         viewPager.setAdapter(
                 new SampleFragmentPagerAdapter(getSupportFragmentManager(), MainActivity.this));
 
-        // Передаём ViewPager в TabLayout
         TabLayout tabLayout = findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
     }

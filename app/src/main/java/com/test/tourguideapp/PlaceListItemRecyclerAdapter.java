@@ -1,8 +1,7 @@
 package com.test.tourguideapp;
 
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -19,9 +18,11 @@ import java.util.ArrayList;
 public class PlaceListItemRecyclerAdapter extends RecyclerView.Adapter<PlaceListItemRecyclerAdapter.ViewHolder> {
 
     private ArrayList<Place> mPlaces;
+    private Context context;
 
-    public PlaceListItemRecyclerAdapter(ArrayList<Place> places) {
+    PlaceListItemRecyclerAdapter(ArrayList<Place> places, Context context) {
         mPlaces = places;
+        this.context = context;
     }
 
     @NonNull
@@ -33,9 +34,9 @@ public class PlaceListItemRecyclerAdapter extends RecyclerView.Adapter<PlaceList
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Place place = mPlaces.get(position);
+        final Place place = mPlaces.get(position);
         holder.mTextViewTitle.setText(place.getTitle());
-        holder.mImageView.setImageBitmap(BitmapFactory.decodeResource(holder.mImageView.getResources(), place.getImageResourceId()));
+        Picasso.with(context).load(place.getImageResourceId()).into(holder.mImageView);
     }
 
     @Override
@@ -43,12 +44,13 @@ public class PlaceListItemRecyclerAdapter extends RecyclerView.Adapter<PlaceList
         return mPlaces.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        public View mView;
-        public CardView mCardView;
-        public TextView mTextViewTitle;
-        public ImageView mImageView;
-        public ViewHolder(View itemView) {
+    class ViewHolder extends RecyclerView.ViewHolder {
+        View mView;
+        CardView mCardView;
+        TextView mTextViewTitle;
+        ImageView mImageView;
+
+        ViewHolder(View itemView) {
             super(itemView);
             mView = itemView;
             mCardView = mView.findViewById(R.id.card_view);
