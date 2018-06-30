@@ -36,7 +36,7 @@ public class PlaceListItemRecyclerAdapter extends RecyclerView.Adapter<PlaceList
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final Place place = mPlaces.get(position);
         holder.mTextViewTitle.setText(place.getTitle());
-        Picasso.with(context).load(place.getImageResourceId()).into(holder.mImageView);
+        Picasso.get().load(place.getImageResourceId()).into(holder.mImageView);
     }
 
     @Override
