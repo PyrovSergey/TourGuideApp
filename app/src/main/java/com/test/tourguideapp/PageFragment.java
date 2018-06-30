@@ -1,6 +1,7 @@
 package com.test.tourguideapp;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -16,6 +17,7 @@ public class PageFragment extends Fragment {
 
     public static final String ARG_PAGE = "ARG_PAGE";
     private int mPage;
+    private Data data;
 
     public static PageFragment newInstance(int page) {
         Bundle bundle = new Bundle();
@@ -28,6 +30,7 @@ public class PageFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        data = Data.getDataInstance(getContext());
         if (getArguments() != null) {
             mPage = getArguments().getInt(ARG_PAGE);
         }
@@ -46,16 +49,16 @@ public class PageFragment extends Fragment {
 
     private ArrayList<Place> getItemPlaceList(int mPage) {
         if (mPage == 1) {
-            return Data.getVisitList(getContext());
+            return data.getVisitList();
         }
         if (mPage == 2) {
-            return Data.getEatList(getContext());
+            return data.getEatList();
         }
         if (mPage == 3) {
-            return Data.getClubList(getContext());
+            return data.getClubList();
         }
         if (mPage == 4) {
-            return Data.getHotelList(getContext());
+            return data.getHotelList();
         }
         return null;
     }
